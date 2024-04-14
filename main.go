@@ -13,7 +13,7 @@ import (
 
 const (
 	relayURL    = "wss://relay.damus.io"
-	receiverPub = "npub1c0qyae9ggdxmrs9gnpkrc5t0dzncfgypvmrx9rzygclzyld5q4nqe9ja8j" //Receiver public key
+	receiverPub = ""
 )
 
 func main() {
@@ -99,7 +99,7 @@ func handleUserInput(ctx context.Context, relay *nostr.Relay, senderPub string, 
 			fmt.Print("Send Message: ")
 			continue
 		}
-		fmt.Printf("\rMessage sent: %s\n", message)
+		fmt.Printf("\033[1A\033[2K\rMessage sent: %s\n", message)
 		fmt.Print("Send Message: ")
 	}
 }
